@@ -1,0 +1,9 @@
+{
+  "name": "quickqr",
+  "version": "0.0.0",
+  "dependencies": {
+    "qrcode": "https://raw.github.com/davidshimjs/qrcodejs/master/qrcode.js",
+    "jQuery": "~2.0.3"
+    },
+  "devDependencies": {}
+}

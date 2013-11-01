@@ -1,0 +1,11 @@
+/* Will be compiled down to a single stylesheet with your sass files */
+
+html, body {
+    /* Defaults css for cssmin process */
+    font-family: "sans-serif";
+}
+
+.container {
+    width: 128px;
+    height: 128px;
+}
