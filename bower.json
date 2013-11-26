@@ -2,8 +2,9 @@
   "name": "quickqr",
   "version": "0.0.0",
   "dependencies": {
+    "jQuery": "~2.0.3",
     "qrcode": "https://raw.github.com/davidshimjs/qrcodejs/master/qrcode.js",
-    "jQuery": "~2.0.3"
+    "uri.js": "~1.11.2"
     },
   "devDependencies": {}
 }

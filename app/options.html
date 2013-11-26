@@ -3,24 +3,31 @@
     <head>
         <link href="styles/main.css" rel="stylesheet">
         <!-- build:js scripts/options.js -->
-        <script src="bower_components/jQuery/dist/jquery.js"></script>
+        <script src="bower_components/jQuery/jquery.js"></script>
         <script src="scripts/options.js"></script>
         <!-- endbuild -->
     </head>
     <body>
         <!-- CHROME EXTENSION OPTION -->
+        <h1>QuickQR Options</h1>
         <form action="#" id="qr_options">
-            <label for="error">Error correction Level</label>
-            <select name="error" id="error">
+            <label for="errorCorrection">Error correction Level</label>
+            <select name="errorCorrection" id="errorCorrection" data-type="select">
                 <option value="L">low (7%)</option>
                 <option value="M">medium (15%)</option>
                 <option value="Q">quartile (25%)</option>
                 <option value="H">high (30%)</option>
             </select>
+            <hr>
             <label for="bgcolor">Background Color</label>
-            <input type="text" name="bgcolor" id="bgcolor" value="#000000">
+            <input type="text" name="bgcolor" id="bgcolor" value="#000000" data-type="text"><br>
             <label for="fgcolor">Foreground Color</label>
-            <input type="text" name="fgcolor" id="fgcolor" value="#FFFFFF">
+            <input type="text" name="fgcolor" id="fgcolor" value="#FFFFFF" data-type="text">
+            <hr>
+            <label for="baseUrl">Base URL (without the Protocol, but with Port if you need)</label>
+            <input type="text" name="baseUrl" id="baseUrl" value="" data-type="text">
+            <br><br>
+            <input type="submit" value="save">
         </form>
     </body>
 </html>
