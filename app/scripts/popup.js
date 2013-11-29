@@ -3,19 +3,28 @@
 
 var quickQr = {
 
+    defaultSettings: {
+        bgcolor: 'black',
+        fgcolor: 'white',
+        errorCorrection: 'M'
+    },
+
     init: function(url){
         var settings = this.getSettings(url);
         this.generateCode(settings);
     },
 
     getSettings: function(url){
-        var keys = window.localStorage.setKeys.split(',');
-        var settings = {};
-        for (var i = 0; i < keys.length; i++) {
-            settings[keys[i]] = window.localStorage.getItem(keys[i]);
+        var settings = this.defaultSettings;
+        settings.url = url;
+        var keys = window.localStorage.setKeys;
+        if(keys !== undefined){
+            keys = keys.split(',');
+            for (var i = 0; i < keys.length; i++) {
+                settings[keys[i]] = window.localStorage.getItem(keys[i]);
+            }
+            settings.url = this.parseUrl(url, settings.baseUrl);
         }
-        settings.url = this.parseUrl(url, settings.baseUrl);
-        console.log(settings);
         return settings;
     },
 
