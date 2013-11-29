@@ -248,7 +248,9 @@ module.exports = function (grunt) {
             dist: {
                 options: {
                     buildnumber: true,
-                    background: 'scripts/background.js'
+                    background: {
+                        target: 'scripts/background.js'
+                    }
                 },
                 src: '<%= yeoman.app %>',
                 dest: '<%= yeoman.dist %>'
@@ -278,7 +280,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
-        //'chromeManifest:dist',
+        'chromeManifest:dist',
         'useminPrepare',
         'concurrent:dist',
         'concat',
